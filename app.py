@@ -35,17 +35,17 @@ if nav == "Data":
     st.write("Welcome to the section on Exploratory Data Analysis.")
     st.write("Data is taken from [titanic](https://www.kaggle.com/competitions/titanic/data?select=train.csv)")
     if st.checkbox("Click here to see the original dataframe"):
-        st.title("Penguins training dataset")
+        st.title("Titanic training dataset")
         st.dataframe(df)
     if st.checkbox("Click here to see missing values"):
         fig,ax = plt.subplots()
         st.title("Heatmap features titanic dataset")
         sns.heatmap(df.corr(), ax = ax)
         st.write(fig)
-    if st.checkbox("Click here to see distribution of variables"):
-        st.title("Distribution features titanic dataset")
-        fig = sns.pairplot(df, hue = "Survived")
-        st.pyplot(fig)
+    # if st.checkbox("Click here to see distribution of variables"):
+    #     st.title("Distribution features titanic dataset")
+    #     fig = sns.pairplot(df, hue = "Survived")
+    #     st.pyplot(fig)
     if st.checkbox("Click here to see the variables taken into account for model fit"):
         st.title("Features for model fit")
         st.write(df[['Pclass', 'Sex', 'Age', 'SibSp', 'Parch']].columns)
