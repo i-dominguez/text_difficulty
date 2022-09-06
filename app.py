@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 import streamlit as st
@@ -42,10 +42,10 @@ if nav == "Data":
         st.title("Heatmap features titanic dataset")
         sns.heatmap(df.corr(), ax = ax)
         st.write(fig)
-    # if st.checkbox("Click here to see distribution of variables"):
-    #     st.title("Distribution features titanic dataset")
-    #     fig = sns.pairplot(df, hue = "Survived")
-    #     st.pyplot(fig)
+    if st.checkbox("Click here to see distribution of variables"):
+        st.title("Distribution features titanic dataset")
+        fig = sns.pairplot(df, hue = "Survived")
+        st.pyplot(fig)
     if st.checkbox("Click here to see the variables taken into account for model fit"):
         st.title("Features for model fit")
         st.write(df[['Pclass', 'Sex', 'Age', 'SibSp', 'Parch']].columns)
