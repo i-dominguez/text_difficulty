@@ -16,9 +16,8 @@ MODEL_FILE = "./artefacts/logistic_regression.bin"
 st.markdown(f"""
 <style>
 .stApp{{
-    background-image: url(https://mdpiblog.wordpress.sciforum.net/wp-content/uploads/sites/4/2018/01/books.jpg);
+    background-image: url(https://i.imgur.com/XtLvKZO.jpg);
     background-size: cover;
-    opacity: 0.5
 }}
 </style>
 """,unsafe_allow_html=True)
@@ -66,5 +65,7 @@ pred = clf_LR.predict(text)
 proba = clf_LR.predict_proba(text)
 
 if st.button("Predict"):
+    st.write(txt)
     st.success(f'''## This text corresponds to the level {pred} with a probability of: {np.round(proba, 2)}''')
     
+
